@@ -14,6 +14,11 @@ module.exports = {
   },
   create: (req, res) => {
     Posts.create(req.body).then((post) => {
+      Users.findById(req.params.userId).then((user) => {
+        post.user.push(user._id);
+
+        post.save();
+      });
       res.json(post);
     });
   },

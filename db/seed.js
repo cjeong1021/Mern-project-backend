@@ -29,8 +29,8 @@ Users.deleteMany({}).then(() => {
         users[0].posts.push(posts[0]._id);
         posts[0].user.push(users[0]._id);
 
-        console.log(users);
-        console.log(posts);
+        users[0].save();
+        posts[0].save();
       });
     });
   });
