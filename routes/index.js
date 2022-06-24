@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/petstagram', require('./users'));
-router.use('/petstagram/post', require('./posts'));
+router.use('/petstagram/users', require('./users'));
+router.use('/petstagram/posts', require('./posts'));
 
 module.exports = router;

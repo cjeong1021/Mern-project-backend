@@ -10,6 +10,7 @@ const data = [
     age: 7,
     picture: 'https://i.imgur.com/ib8sGEl.jpg',
     description: 'Good Girl',
+    posts: [],
   },
 ];
 
@@ -17,17 +18,20 @@ const postData = [
   {
     post: "Hi, I'm Snoppy, nice to meet you",
     likes: 2,
+    user: [],
   },
 ];
 
 Users.deleteMany({}).then(() => {
-  Users.create(data).then((user) => {
-    console.log(user);
-  });
-});
+  Posts.deleteMany({}).then(() => {
+    Users.create(data).then((users) => {
+      Posts.create(postData).then((posts) => {
+        users[0].posts.push(posts[0]._id);
+        posts[0].user.push(users[0]._id);
 
-Posts.deleteMany({}).then(() => {
-  Posts.create(postData).then((post) => {
-    console.log(post);
+        console.log(users);
+        console.log(posts);
+      });
+    });
   });
 });
