@@ -22,7 +22,7 @@ The Posts model will hold the information that should be rendered when a user po
 
 ### Comments
 
-Comments model will be formatted similarly to the Posts model, containing information
+Comments model will be formatted similarly to the Posts model, containing the text that should render in the comment, the user who posted it and likes.
 
 # Frontend Components
 
