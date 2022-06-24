@@ -1,13 +1,13 @@
-### Proposal
+# Proposal
 
 We want to make an Instagram app clone but for pets only. We're going to call it Petstagram, allowing users to post pictures, comment and like eachothers posts about their pets.
 
-### Wireframes
+# Wireframes
 
-### Backend Components
+# Backend Components
 
-### Frontend Components
+# Frontend Components
 
-### User Stories
+# User Stories
 
-### MVP
+# MVP
