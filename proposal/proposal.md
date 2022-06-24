@@ -6,6 +6,24 @@ We want to make an Instagram app clone but for pets only. We're going to call it
 
 # Backend Components
 
+For the backend, we will be using Express and MongoDB to make an API that will store posts, comments, pictures and users. The frontend will call the API to retrieve the data and render it on the page.
+
+## Models
+
+The MongoDB models will be split up into Users, Posts and Comments.
+
+### Users
+
+The Users model will hold information about the user and will link to the Posts and Comments. The model will contain the user's name and additional information like their pet name, type, breed, etc.
+
+### Posts
+
+The Posts model will hold the information that should be rendered when a user posts something. It will contain text that the user types in when they make a post, pictures that are attached to the post, have a Comments sub-model and link to Users model for that specific user.
+
+### Comments
+
+Comments model will be formatted similarly to the Posts model, containing information
+
 # Frontend Components
 
 # User Stories
