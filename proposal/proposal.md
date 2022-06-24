@@ -4,19 +4,13 @@ We want to make an Instagram app clone but for pets only. We're going to call it
 
 # Wireframes
 
-We're going to have App pass down data to the main/homePage component. 
+We're going to have App pass down data to the main/homePage component.
 We will have a posts component where users can add, edit, or delete posts.
 We will also have a comments components where users can add comments or delete comments to posts made by other users.
 
-### Backend Components
+# Backend Components
 
 For the backend, we will be using Express and MongoDB to make an API that will store posts, comments, pictures and users. The frontend will call the API to retrieve the data and render it on the page.
-
-
-
-### User Stories
-
-The MongoDB models will be split up into Users, Posts and Comments.
 
 ### Users
 
@@ -30,16 +24,14 @@ The Posts model will hold the information that should be rendered when a user po
 
 Comments model will be formatted similarly to the Posts model, containing the text that should render in the comment, the user who posted it and likes.
 
-
-
 # User Stories
 
-As a user, I want to be able to post pictures of my pet.
-As a user, I want to be able to comment on other users' posts.
-As a user, I want to be able to like other users' posts.
-As a user, I want to be able to see a list of all users' posts.
-As a user, I want to be able to see a list of all users' comments.
-As a user, I want to be able to see a list of all users' likes.
+- As a user, I want to be able to post pictures of my pet.
+- As a user, I want to be able to comment on other users' posts.
+- As a user, I want to be able to like other users' posts.
+- As a user, I want to be able to see a list of all users' posts.
+- As a user, I want to be able to see a list of all users' comments.
+- As a user, I want to be able to see a list of all users' likes.
 
 # MVP
 
