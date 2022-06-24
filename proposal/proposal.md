@@ -35,9 +35,9 @@ As a user, I want to be able to see a list of all users' posts.
 As a user, I want to be able to see a list of all users' comments.
 As a user, I want to be able to see a list of all users' likes.
 
-### MVP
+# MVP
 
-### Stretch Goals
+# Stretch Goals
 
 Once we're done with the user stories, we aim to build user authentication and authorization so users can interect with eachother.
 We want to build a sign up, sign in page where users need to sign up first in order to use the app.
