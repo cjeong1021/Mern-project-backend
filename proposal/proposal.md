@@ -35,6 +35,8 @@ Comments model will be formatted similarly to the Posts model, containing the te
 
 # MVP
 
+Our MVP will focus on functionality and styling. We want our MVP to follow a simple blog post that has CRUD Functionality on the different backend models with no user authentication yet. This means users can login, make posts that has post information, their name and pictures, and allow them to comment and like different posts. Because there is no user authentication, users will be able to edit or delete ANY post from ANY user, but we are planning on making that a stretch goal for our project after MVP is achieved.
+
 # Stretch Goals
 
 Once we're done with the user stories, we aim to build user authentication and authorization so users can interect with eachother.
