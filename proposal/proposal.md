@@ -4,7 +4,7 @@ We want to make an Instagram app clone but for pets only. We're going to call it
 
 # Wireframes
 
-We're going to have App pass down data to the main/homePage component.
+We're going to have App pass down data to the main/homepage component.
 We will have a posts component where users can add, edit, or delete posts.
 We will also have a comments components where users can add comments or delete comments to posts made by other users.
 
