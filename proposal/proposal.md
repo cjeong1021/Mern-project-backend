@@ -3,6 +3,8 @@
 We want to make an Instagram app clone but for pets only. We're going to call it Petstagram, allowing users to post pictures, comment and like eachothers posts about their pets.
 
 # Wireframes
+![IMG-8714](https://user-images.githubusercontent.com/103589293/175569471-70177903-cbd6-4b6e-86df-42ed26a10bb5.jpg)
+
 
 We're going to have App pass down data to the main/homepage component.
 We will have a posts component where users can add, edit, or delete posts.
