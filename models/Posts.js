@@ -9,12 +9,12 @@ const PostSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
     },
   ],
-  // comments: [
-  //   {
-  //     ref: 'Comments',
-  //     type: mongoose.Schema.Types.ObjectId,
-  //   },
-  // ],
+  comments: [
+    {
+      ref: 'Comments',
+      type: mongoose.Schema.Types.ObjectId,
+    },
+  ],
 });
 
 module.exports = mongoose.model('Posts', PostSchema);
