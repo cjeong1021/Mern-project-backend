@@ -1,4 +1,4 @@
-const mongoose = require("../db/connection");
+const mongoose = require('../db/connection');
 
 const UserSchema = new mongoose.Schema({
   name: String,
@@ -9,10 +9,22 @@ const UserSchema = new mongoose.Schema({
   description: String,
   posts: [
     {
-      ref: "Posts",
+      ref: 'Posts',
+      type: mongoose.Schema.Types.ObjectId,
+    },
+  ],
+  likedPosts: [
+    {
+      ref: 'Posts',
+      type: mongoose.Schema.Types.ObjectId,
+    },
+  ],
+  savedPosts: [
+    {
+      ref: 'Posts',
       type: mongoose.Schema.Types.ObjectId,
     },
   ],
 });
 
-module.exports = mongoose.model("Users", UserSchema);
+module.exports = mongoose.model('Users', UserSchema);

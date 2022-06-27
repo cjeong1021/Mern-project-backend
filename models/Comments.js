@@ -2,7 +2,6 @@ const mongoose = require('../db/connection');
 
 const CommentSchema = new mongoose.Schema({
   comment: String,
-  likes: Number,
   user: [
     {
       ref: 'Users',

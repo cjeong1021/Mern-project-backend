@@ -9,6 +9,18 @@ const PostSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
     },
   ],
+  likedByUsers: [
+    {
+      ref: 'Users',
+      type: mongoose.Schema.Types.ObjectId,
+    },
+  ],
+  favedByUsers: [
+    {
+      ref: 'Users',
+      type: mongoose.Schema.Types.ObjectId,
+    },
+  ],
   comments: [
     {
       ref: 'Comments',

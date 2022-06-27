@@ -29,6 +29,38 @@ module.exports = {
       }
     );
   },
+  editLikes: (req, res) => {
+    Posts.findById(req.params.id).then((post) => {
+      Users.findById(req.params.userId).then((user) => {
+        if (!post.likedByUsers.includes(user._id)) {
+          post.likedByUsers.push(user._id);
+          post.save();
+        } else {
+          const index = post.likedByUsers.indexOf(user._id);
+          post.likedByUsers.splice(0, index);
+
+          post.save();
+        }
+        res.json(post);
+      });
+    });
+  },
+  editFaves: (req, res) => {
+    Posts.findById(req.params.id).then((post) => {
+      Users.findById(req.params.userId).then((user) => {
+        if (!post.favedByUsers.includes(user._id)) {
+          post.favedByUsers.push(user._id);
+          post.save();
+        } else {
+          const index = post.favedByUsers.indexOf(user._id);
+          post.favedByUsers.splice(0, index);
+
+          post.save();
+        }
+        res.json(post);
+      });
+    });
+  },
   delete: (req, res) => {
     Posts.findByIdAndDelete(req.params.id).then((post) => {
       res.json(post);
