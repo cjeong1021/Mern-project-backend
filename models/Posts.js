@@ -1,7 +1,6 @@
 const mongoose = require('../db/connection');
 
 const PostSchema = new mongoose.Schema({
-  title: String,
   likes: Number,
   picture: String,
   description: String,
@@ -23,7 +22,7 @@ const PostSchema = new mongoose.Schema({
   ],
   comments: [
     {
-      ref: 'Comments',
+      ref: 'Commdents',
       type: mongoose.Schema.Types.ObjectId,
     },
   ],
