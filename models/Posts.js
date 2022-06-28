@@ -1,9 +1,10 @@
 const mongoose = require('../db/connection');
 
 const PostSchema = new mongoose.Schema({
-  post: String,
+  title: String,
   likes: Number,
   picture: String,
+  description: String,
   user: {
     ref: 'Users',
     type: mongoose.Schema.Types.ObjectId,

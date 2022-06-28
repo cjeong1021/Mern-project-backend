@@ -10,7 +10,7 @@ const data = [
     type: 'Dog',
     age: 7,
     picture: 'https://i.imgur.com/ib8sGEl.jpg',
-    userId: 'Snoopy123',
+    username: 'Snoopy123',
     password: 'asdf',
     email: 'asdf@gmail.com',
     logIn: false,
@@ -23,7 +23,7 @@ const data = [
     age: 7,
     picture:
       'https://www.zooplus.ie/magazine/wp-content/uploads/2019/04/maine-coon-cat-breed.jpg',
-    userId: 'milo123',
+    username: 'milo123',
     password: 'asdf',
     email: 'asdf@gmail.com',
     logIn: false,
@@ -33,12 +33,14 @@ const data = [
 
 const postData = [
   {
-    post: "Hi, I'm Snoppy, nice to meet you",
+    title: 'asdf',
+    description: "Hi, I'm Snoppy, nice to meet you",
     likes: 2,
     picture: 'https://i.imgur.com/ib8sGEl.jpg',
   },
   {
-    post: "Hello, I'm Milo",
+    title: 'asdf',
+    description: "Hello, I'm Milo",
     likes: 2,
     picture:
       'https://www.zooplus.ie/magazine/wp-content/uploads/2019/04/maine-coon-cat-breed.jpg',
