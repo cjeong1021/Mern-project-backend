@@ -30,22 +30,24 @@ module.exports = {
     );
   },
   editLikes: (req, res) => {
-    console.log(req.body)
-    Posts.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((post) => {
-      Users.findById(req.params.userId).then((user) => {
-        if (!post.likedByUsers.includes(user._id)) {
-          post.likedByUsers.push(user._id);
-          post.save();
-        } else {
-          const index = post.likedByUsers.indexOf(user._id);
-          post.likedByUsers.splice(0, index);
+    console.log(req.body);
+    Posts.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
+      (post) => {
+        Users.findById(req.params.userId).then((user) => {
+          if (!post.likedByUsers.includes(user._id)) {
+            post.likedByUsers.push(user._id);
+            post.save();
+          } else {
+            const index = post.likedByUsers.indexOf(user._id);
+            post.likedByUsers.splice(0, index);
 
-          post.save();
-        }
-        console.log(post.likes)
-        res.json(post);
-      });
-    });
+            post.save();
+          }
+          console.log(post.likes);
+          res.json(post);
+        });
+      }
+    );
   },
   editFaves: (req, res) => {
     Posts.findById(req.params.id).then((post) => {
@@ -65,6 +67,12 @@ module.exports = {
   },
   delete: (req, res) => {
     Posts.findByIdAndDelete(req.params.id).then((post) => {
+      Users.findByIdAndUpdate(req.params.userId).then((res) => {
+        const index = res.posts.indexOf(req.params.userId);
+        res.posts.splice(index, 1);
+
+        res.save();
+      });
       res.json(post);
     });
   },
