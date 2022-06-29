@@ -1,4 +1,5 @@
 const Comments = require('../models/Comments');
+const Posts = require('../models/Posts');
 const Users = require('../models/Users');
 
 module.exports = {
@@ -15,9 +16,15 @@ module.exports = {
   create: (req, res) => {
     Comments.create(req.body).then((comment) => {
       Users.findById(req.params.userId).then((user) => {
-        comment.user.push(user._id);
+        Posts.findById(req.params.postId).then((post) => {
+          comment.user = user._id;
+          comment.post = post._id;
 
-        comment.save();
+          post.comments.push(comment._id);
+
+          comment.save();
+          post.save();
+        });
       });
       res.json(comment);
     });

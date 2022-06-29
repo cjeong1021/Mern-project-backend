@@ -37,13 +37,11 @@ const data = [
 
 const postData = [
   {
-    title: 'asdf',
     description: "Hi, I'm Snoppy, nice to meet you",
     likes: 2,
     picture: 'https://i.imgur.com/ib8sGEl.jpg',
   },
   {
-    title: 'asdf',
     description: "Hello, I'm Milo",
     likes: 2,
     picture:
@@ -69,7 +67,9 @@ Users.deleteMany({}).then(() => {
             posts[0].user = users[0]._id;
             posts[0].likedByUsers.push(users[0]._id);
             posts[0].favedByUsers.push(users[0]._id);
-            comments[0].user.push(users[0]._id);
+            posts[0].comments.push(comments[0]._id);
+            comments[0].user = users[0]._id;
+            comments[0].post = posts[0]._id;
 
             users[1].posts.push(posts[1]._id);
             users[1].likedPosts.push(posts[1]._id);
