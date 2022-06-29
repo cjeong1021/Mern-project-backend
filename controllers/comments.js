@@ -38,6 +38,12 @@ module.exports = {
   },
   delete: (req, res) => {
     Comments.findByIdAndDelete(req.params.id).then((comment) => {
+      Posts.findByIdAndUpdate(req.params.postId).then((res) => {
+        const index = res.comments.indexOf(req.params.id);
+        res.comments.splice(index, 1);
+
+        res.save();
+      });
       res.json(comment);
     });
   },
