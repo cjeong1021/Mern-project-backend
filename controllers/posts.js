@@ -30,7 +30,8 @@ module.exports = {
     );
   },
   editLikes: (req, res) => {
-    Posts.findById(req.params.id).then((post) => {
+    console.log(req.body)
+    Posts.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((post) => {
       Users.findById(req.params.userId).then((user) => {
         if (!post.likedByUsers.includes(user._id)) {
           post.likedByUsers.push(user._id);
@@ -41,6 +42,7 @@ module.exports = {
 
           post.save();
         }
+        console.log(post.likes)
         res.json(post);
       });
     });
