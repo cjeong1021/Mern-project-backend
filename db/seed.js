@@ -15,6 +15,8 @@ const data = [
     email: 'asdf@gmail.com',
     logIn: false,
     description: 'Good Girl',
+    followers: [],
+    following: []
   },
   {
     name: 'Milo',
@@ -28,6 +30,8 @@ const data = [
     email: 'asdf@gmail.com',
     logIn: false,
     description: 'Good Girl',
+    followers: [],
+    following: []
   },
 ];
 
@@ -73,6 +77,11 @@ Users.deleteMany({}).then(() => {
             posts[1].user = users[1]._id;
             posts[1].likedByUsers.push(users[1]._id);
             posts[1].favedByUsers.push(users[1]._id);
+
+            users[0].following.push(users[1]._id);
+            users[0].followers.push(users[1]._id);
+            users[1].following.push(users[0]._id);
+            users[1].followers.push(users[0]._id);
 
             users[0].save();
             posts[0].save();

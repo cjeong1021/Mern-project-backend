@@ -1,4 +1,4 @@
-const Users = require('../models/Users');
+const Users = require("../models/Users");
 
 module.exports = {
   index: (req, res) => {
@@ -27,5 +27,32 @@ module.exports = {
     Users.findByIdAndDelete(req.params.id).then((user) => {
       res.json(user);
     });
+  },
+  follow: (req, res) => {
+    Users.findByIdAndUpdate(
+      req.params.id,
+      { $push: { followers: req.body.id } },
+      { new: true },
+      (err, result) => {
+        if (err) {
+          return res.json(err);
+        }
+        Users.findByIdAndUpdate(
+          req.body._id,
+          {
+            $push: {
+              following: req.params.id,
+            },
+          },
+          { new: true }
+        )
+          .then((result) => {
+            res.json(result);
+          })
+          .catch((err) => {
+            res.json(err);
+          });
+      }
+    );
   },
 };

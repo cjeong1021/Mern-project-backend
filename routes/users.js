@@ -8,5 +8,7 @@ router.get('/:id', userController.show);
 router.post('/', userController.create);
 router.put('/:id', userController.edit);
 router.delete('/:id', userController.delete);
+router.put('/:id', userController.follow);
+
 
 module.exports = router;
