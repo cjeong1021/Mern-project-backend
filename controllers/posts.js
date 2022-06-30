@@ -14,10 +14,12 @@ module.exports = {
   },
   create: (req, res) => {
     Posts.create(req.body).then((post) => {
-      Users.findById(req.params.userId).then((user) => {
+      Users.findByIdAndUpdate(req.params.userId).then((user) => {
         post.user = user._id;
+        user.posts.push(post._id);
 
         post.save();
+        user.save();
       });
       res.json(post);
     });
