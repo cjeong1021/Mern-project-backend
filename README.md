@@ -60,11 +60,21 @@ The Users model holds important information about the user such as name, type, b
 
 The endpoints for the users allow for GET, POST and PUT requests so that users can login into their account, create an account and edit their account. 
   
-- GET https://localhost:8000/petstagram/users/<User ObjectId>
+  ```
+  GET https://localhost:8000/petstagram/users/<UserObjectId>
+  ```
+  
   Get all users or specify user ObjectId to pull specific user.
-- POST https://localhost:8000/petstagram/users/
+  
+  ```
+  POST https://localhost:8000/petstagram/users/
+  ```
+  
   Create a user by sending post request and user Object in request body
-- PUT https://localhost:8000/petstagram/users/<User ObjectId>
+  ```
+  PUT https://localhost:8000/petstagram/users/:UserObjectId
+  ```
+  
   Edit a user by sending a put request and edited user Object in request body
 
 ## Posts
@@ -75,11 +85,22 @@ The Posts model holds information that will be displayed on a post as well as co
   
   The endpoints for posts allow for GET, POST and DELETE requests so that the frontend can display posts on the main page, allow users to create their own posts and delete posts on their page.
   
-- GET https://localhost:8000/petstagram/posts/<Post ObjectId>
+  ```
+  GET https://localhost:8000/petstagram/posts/<PostObjectId>
+  ```
+  
   Get all posts or specify post ObjectId to pull specific post.
-- POST https://localhost:8000/petstagram/posts/:User ObjectId
+  
+  ```
+  POST https://localhost:8000/petstagram/posts/:UserObjectId
+  ```
+  
   Create a post by sending POST request and Posts Object in request body. Make sure to specify a user ObjectId in the endpoint so that the new post can be linked to a specific user
-- DELETE https://localhost:8000/petstagram/posts/:Post ObjectId
+  
+  ```
+  DELETE https://localhost:8000/petstagram/posts/:PostObjectId
+  ```
+  
   Delete a post by sending a DELETE request, with the post ObjectId in the endpoint URL.
   
 ## Comments
@@ -91,18 +112,18 @@ The Comments model holds information that will be displayed in the comment and p
 The endpoints for posts allow for GET, POST and DELETE requests so that the frontend can display comments under their respective posts, allow users to make their own comments and delete comments on their page.
 
   ```
-GET https://localhost:8000/petstagram/comments/<Comment ObjectId>
+GET https://localhost:8000/petstagram/comments/<CommentObjectId>
   ```
   
   Get all comments or specify comment ObjectId to pull specific comment.
   
   ```
-  POST https://localhost:8000/petstagram/posts/:Post ObjectId/:User ObjectId
+  POST https://localhost:8000/petstagram/posts/:PostObjectId/:UserObjectId
   ```
   Create a comment by sending POST request and a comment Object in request body. Make sure to specify a user and post ObjectId in the endpoint so that the new comment can be linked to a specific user and post.
   
   ```
-  DELETE https://localhost:8000/petstagram/posts/:Comment ObjectId
+  DELETE https://localhost:8000/petstagram/posts/:CommentObjectId
   ```
   
   Delete a comment by sending a DELETE request, with the comment ObjectId in the endpoint URL.
