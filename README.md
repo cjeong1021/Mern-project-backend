@@ -4,15 +4,15 @@ Petstagram is an Instagram inspired app for pets so people can show off their fa
 
 ## Important Endpoints
 
-- [](https://petstagram-backend.herokuapp.com/petstagram/users)
+- [https://petstagram-backend.herokuapp.com/petstagram/users](https://petstagram-backend.herokuapp.com/petstagram/users)
 
 This endpoint will pull all the data for users that exist in the database. These user models contain ObjectIds that point to different posts that were made by that user. Adding the ObjectId for that user after the endpoint (https://localhost:8000/petstagram/users/<INSERT ID HERE>) will only pull data for that specific user.
 
-- [](https://petstagram-backend.herokuapp.com/petstagram/posts)
+- [https://petstagram-backend.herokuapp.com/petstagram/posts](https://petstagram-backend.herokuapp.com/petstagram/posts)
   
   This endpoint will pull all the posts that exist in the database. The posts contain ObjectIds that point to different comments that were made under the post, as well as point to the user who made the post. Adding the ObjectId at the end of the endpoint will also work for this.
   
-- [](https://petstagram-backend.herokuapp.com/petstagram/comments)
+- [https://petstagram-backend.herokuapp.com/petstagram/comments](https://petstagram-backend.herokuapp.com/petstagram/comments)
   
   This endpoint will pull all the comments that exist in the database. The comments contain ObjectIds that point to the user who made the comment as well as the post that the comment was made under. Adding the ObjectId at the end of the endpoint will also work for this.
 
