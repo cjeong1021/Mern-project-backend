@@ -1,6 +1,6 @@
 # Petstagram
 
-Petstagram is an Instagram inspired app for pets so people can show off their favorite pet photos. This is the backend repo for the app (the frontend repo can be found ![here](https://github.com/cjeong1021/Mern-project-frontend))
+Petstagram is an Instagram inspired app for pets so people can show off their favorite pet photos. This is the backend repo for the app (the frontend repo can be found [here](https://github.com/cjeong1021/Mern-project-frontend))
 
 ## Technologies Used
 
