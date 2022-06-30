@@ -30,3 +30,7 @@ nodemon
 ```
 
 You should see the server running in the terminal at PORT: 8000.
+
+## Database Modelling
+
+There are three models used to structure the database: Users, Posts and Comments. The relationship between each model is shown in the ERD below.
