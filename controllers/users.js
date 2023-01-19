@@ -1,4 +1,4 @@
-const Users = require("../models/Users");
+const Users = require('../models/Users');
 
 module.exports = {
   index: (req, res) => {
@@ -11,9 +11,19 @@ module.exports = {
       res.json(user);
     });
   },
-  create: (req, res) => {
-    Users.create(req.body).then((user) => {
-      res.json(user);
+  signup: (req, res) => {
+    const user = new Users(req.body);
+    user.save((err, user) => {
+      if (err) {
+        return res.status(400).json({
+          error: err,
+        });
+      }
+
+      return res.json({
+        message: 'Success',
+        user,
+      });
     });
   },
   edit: (req, res) => {

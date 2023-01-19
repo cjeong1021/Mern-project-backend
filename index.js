@@ -9,7 +9,7 @@ const cors = require('cors');
 const userController = require('./controllers/users');
 
 app.use(parser.json());
-app.use(cookieParser.json());
+app.use(cookieParser());
 app.use(parser.urlencoded({ extended: true }));
 app.use(
   cors({
