@@ -1,4 +1,8 @@
 const Users = require('../models/Users');
+const { validationResult } = require('express-validator');
+var jwt = require('jsonwebtoken');
+var expressJwt = require('express-jwt');
+const { restart } = require('nodemon');
 
 module.exports = {
   index: (req, res) => {
@@ -12,6 +16,14 @@ module.exports = {
     });
   },
   signup: (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        error: errors.array()[0].msg,
+      });
+    }
+
     const user = new Users(req.body);
     user.save((err, user) => {
       if (err) {
@@ -23,6 +35,37 @@ module.exports = {
       return res.json({
         message: 'Success',
         user,
+      });
+    });
+  },
+  signin: (req, res) => {
+    const { email, password } = req.body;
+
+    Users.findOne({ email }, (err, user) => {
+      // Check if inputted email and password are valid
+      if (err || !user) {
+        return res.status(400).json({
+          error: 'Email not found',
+        });
+      }
+
+      if (!user.authenticate(password)) {
+        return res.status(400).json({
+          error: 'Email and password do not match',
+        });
+      }
+
+      // When checks pass, create a JSON Web Token
+      const token = jwt.sign({ _id: Users._id }, process.env.SECRET);
+
+      // Put token in cookies, expires in 24 hours
+      res.cookie('token', token, { expire: new Date() + 1 });
+
+      // Send response
+      const { _id, name, email } = user;
+      return res.json({
+        token,
+        user: { _id, name, email },
       });
     });
   },

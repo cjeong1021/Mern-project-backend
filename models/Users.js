@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique: false,
+      unique: true,
     },
     logIn: Boolean,
     description: String,
