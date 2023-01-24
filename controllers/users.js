@@ -69,6 +69,12 @@ module.exports = {
       });
     });
   },
+  signout: (req, res) => {
+    res.clearCookie('token');
+    return res.json({
+      message: 'Signout success',
+    });
+  },
   edit: (req, res) => {
     Users.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
       (user) => {

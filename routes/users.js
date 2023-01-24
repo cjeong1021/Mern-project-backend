@@ -18,6 +18,7 @@ router.post(
   userController.signup
 );
 router.post('/signin', userController.signin);
+router.post('/signout', userController.signout);
 router.put('/:id', userController.edit);
 router.delete('/:id', userController.delete);
 router.put('/:id', userController.follow);
